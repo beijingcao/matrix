@@ -1,4 +1,5 @@
 安装matrix参考：https://blog.laoda.de/archives/docker-compose-install-matrix-element
+Simple-Matrix-Bot-Lib：https://simple-matrix-bot-lib.readthedocs.io/en/latest/examples.html
 
 ==========================安装 Docker 环境==========================
 1. 安装 Docker（非大陆服务器）
@@ -83,9 +84,9 @@ services:
 
 
 ==========================创建 synapse 管理员账号==========================
-docker exec -it synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -a -u admin -p password
-docker exec -it synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -a -u bossinfo -p password
-docker exec -it synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -a -u todo -p password
+docker exec -it matrix_synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -a -u admin -p password
+docker exec -it matrix_synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -a -u bossinfo -p password
+docker exec -it matrix_synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -a -u todo -p password
 
 
 nginx: http://www.hwmind.cn:81
@@ -109,6 +110,15 @@ docker logs xxxxx
 docker restart xxxx
 docker-compose down 
 
+==========================设置bossinfo程序的基础环境==========================
+pip3 install simplematrixbotlib
+pip3 install xpinyin bs4
+pip3 install "matrix-nio[e2e]"
+rm -rf /root/bossinfo/session.txt /root/bossinfo/crypto_store
+rm -rf /root/tododir/session.txt /root/tododir/crypto_store
 
+==========================设置crontab -e自动任务==========================
+@reboot /root/bossinfo/checkboss.sh
+@reboot /root/tododir/checktodo.sh
 
 
