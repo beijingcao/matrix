@@ -46,7 +46,7 @@ enable_registration: true
 # 无需电子邮件或 recaptcha 验证即可注册（其实不推荐）
 enable_registration_without_verification: true
 # 客户端用于访问此 Homeserver 的面向公众的基本 URL
-public_baseurl: www.hwmind.cn
+public_baseurl: http://www.hwmind.cn
 # 默认情况下，其他服务器将尝试通过端口 8448 访问我们的服务器，告诉其他服务器将流量发送到端口 443
 serve_server_wellknown: true
 
