@@ -61,9 +61,9 @@ config.emoji_verify = True
 config.ignore_unverified_devices = True
 config.store_path = '/root/bossinfo/crypto_store/'
 creds = botlib.Creds(
-    homeserver="https://www.hwmind.cn",
-    username="bossinfo",
-    password="ffff@1234",
+    homeserver="https://xxx",
+    username="xxx",
+    password="xxx",
     session_stored_file="/root/bossinfo/session.txt"
     )
 bot = botlib.Bot(creds, config)
