@@ -39,7 +39,7 @@ matrixdotorg/synapse:latest generate
 ///////////////////////////////////////////////////////////////////////////////////////
 
 cd /root/matrix/data 修改homeserver.yaml
-vim homeserver.yaml
+vi homeserver.yaml
 添加：
 # 为新用户启用注册
 enable_registration: true
@@ -52,7 +52,7 @@ serve_server_wellknown: true
 
 创建程序，添加三个应用element、synapse、nginx：
 cd /root/matrix
-vim docker-compose.yml 内容：
+vi docker-compose.yml 内容：
 //////////////////////////////////////////////////////////////////////////////////////////////
 version: "3.3"
 services:
@@ -90,6 +90,7 @@ services:
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 docker-compose pull
+docker-compose up -d
 
 nginx: http://www.hwmind.cn:81
 synapse: http://www.hwmind.cn:8008
