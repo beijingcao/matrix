@@ -89,6 +89,8 @@ services:
       - ./letsencrypt:/etc/letsencrypt  # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 letsencrypt 文件夹中
 //////////////////////////////////////////////////////////////////////////////////////////////
 
+docker-compose pull
+
 nginx: http://www.hwmind.cn:81
 synapse: http://www.hwmind.cn:8008
 element: http://www.hwmind.cn:8009
@@ -97,7 +99,6 @@ element: http://www.hwmind.cn:8009
 Email: admin@example.com
 Password: changeme
 
-docker-compose pull
 
 ==========================创建 synapse 管理员账号==========================
 docker exec -it matrix_synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -a -u admin -p password
