@@ -97,6 +97,8 @@ element: http://www.hwmind.cn:8009
 Email: admin@example.com
 Password: changeme
 
+docker-compose pull
+
 ==========================创建 synapse 管理员账号==========================
 docker exec -it matrix_synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -a -u admin -p password
 docker exec -it matrix_synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -a -u bossinfo -p password
