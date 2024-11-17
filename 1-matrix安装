@@ -128,7 +128,11 @@ rm -rf /root/bossinfo/session.txt /root/bossinfo/crypto_store
 rm -rf /root/tododir/session.txt /root/tododir/crypto_store
 
 ==========================设置crontab -e自动任务==========================
-@reboot /root/bossinfo/checkboss.sh
-@reboot /root/tododir/checktodo.sh
+@reboot /root/bosstodo/checkbosstodo.sh
+#@reboot /root/tododir/checktodo.sh
 
+==========================启用了miniconda虚拟环境=========================
+如果先安装并激活了miniconda，则需要在checkbosstodo.sh文件中修改python3的默认路径
+which python3
+/root/miniconda3/bin/python3
 
